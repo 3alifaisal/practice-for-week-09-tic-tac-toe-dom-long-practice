@@ -1,1 +1,96 @@
 /* Your code here */
+header {
+ text-align: center;
+ font-family: 'Courier New', Courier, monospace;
+ font-size: large;
+
+}
+.hidden{
+    opacity: 0;
+}
+.visible{
+    opacity: 1;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#gridBody {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0;
+
+    
+}
+
+.border-bottom{
+    border-bottom: 2px solid black;
+}
+.border-top{
+    border-top: 2px solid black;
+}
+
+.border-right{
+    border-right: 2px solid black;
+}
+
+.border-left{
+    border-left: 2px solid black;
+}
+
+#gridBody div{
+    margin: -3px;
+    position: relative;
+    width: 150px;
+    height: 150px;
+ 
+}
+
+main #lower-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-top: 50px;
+}
+/* 
+animation for clicking on a sqaure */
+#gridBody div img{
+    position: absolute;
+}
+#gridBody div div.hollow-circle {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+     width: 0%;
+     height: 0%;
+     border: 2px solid blue;
+     /* Color of the border */
+     border-radius: 50%;
+     /* Make it a circle */
+     background-clip: padding-box;
+     /* Clip the background to the padding-box */
+     background-color: transparent;
+     /* Make the background transparent */
+     animation: expandCircle 0.5s ease-in-out;
+ }
+
+ @keyframes expandCircle {
+     0% {
+        position: absolute;
+         opacity: 1;
+         width: 0%;
+         height: 0%;
+     }
+
+     100% {
+        position: absolute;
+         opacity: 0;
+         width: 100%;
+         height: 100%;
+     }
+ }
